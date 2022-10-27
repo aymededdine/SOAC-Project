@@ -22,14 +22,19 @@ public class AppStartUp implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
 		
+		if (studentServ.findAll().isEmpty() || departementServ.findAll().isEmpty()) {
+		
 		Departement dep1 = new Departement();
+		dep1.setId(1);
 		dep1.setName("GL");
 		departementServ.insert(dep1);
 		Departement dep2 = new Departement();
 		dep2.setName("TI");
+		dep2.setId(2);
 		departementServ.insert(dep2);
 		Departement dep3 = new Departement();
 		dep3.setName("MI");
+		dep3.setId(3);
 		departementServ.insert(dep3);
 		
 		
@@ -37,16 +42,19 @@ public class AppStartUp implements CommandLineRunner {
 		Student student2 = new Student();
 		Student student3 = new Student();
 		
+		student1.setId(1);
 		student1.setFullName("Riyad Mahrez");
 		student1.setBithDate("10-3-1989");
 		student1.setDep(dep1);
 		student1.setSignYear(2010);
 		
+		student2.setId(2);
 		student2.setFullName("Ouness Gawaoui");
 		student2.setBithDate("10-4-1980");
 		student2.setDep(dep2);
 		student2.setSignYear(2010);
-		
+
+		student3.setId(3);
 		student3.setFullName("Faouzi Shawshi");
 		student3.setBithDate("10-3-1989");
 		student3.setDep(dep3);
@@ -54,7 +62,7 @@ public class AppStartUp implements CommandLineRunner {
 		
 		studentServ.insert(student1);
 		studentServ.insert(student2);
-		studentServ.insert(student3);
+		studentServ.insert(student3); }
 		
 	}
 

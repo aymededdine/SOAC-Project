@@ -35,4 +35,9 @@ public class StudentServ {
 		return current !=null;
 	}
 
+	public List<Student> findAll() {
+		// TODO Auto-generated method stub
+		return (List<Student>) studentRepo.findAll();
+	}
+
 }

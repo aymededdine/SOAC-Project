@@ -1,5 +1,6 @@
 package com.ntic.gl.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,11 +12,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="student")
+@Table(name="students_fac")
 public class Student {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="student_id")
 	private long id;
 	
@@ -37,7 +38,7 @@ public class Student {
 		this.signYear = signYear;
 	}
 
-	@ManyToOne()
+	@ManyToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name="dep_id")
 	private Departement dep;
 

@@ -11,7 +11,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="departements")
+@Table(name="departements_fac")
 public class Departement {
 	
 	@Id
